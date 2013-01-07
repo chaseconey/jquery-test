@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //if js is loaded on machine, add js class for form
-    $("#content").addClass("js");
+    var content = $("#content");
+    content.addClass("js");
     
     
     var contactForm = {
@@ -53,4 +54,15 @@ $(document).ready(function() {
     contactForm.init({
         effect: "slideToggle", 
         speed: 250});
+        
+    //FadeSlide using animate function
+    var fadeSlideBtn = $("#fadeSlide");
+    
+    fadeSlideBtn.on("click", function(){
+        console.log("YEAH");
+        $("article").animate({
+            "height": "toggle",
+            "opacity": "toggle"
+        });
+    });
 });
